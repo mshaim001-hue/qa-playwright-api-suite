@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+blob-report/
+allure-results/
+allure-report/
+_site/
+*.log
+.DS_Store
+npm-debug.log*
