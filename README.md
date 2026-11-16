@@ -99,19 +99,13 @@ The tests themselves do not need Java. `allure-playwright` only writes result fi
 3. `npm run lint`, `npm run typecheck`, `npm run format:check`, `npm test`
 4. Upload the Playwright HTML report and the Allure results as artifacts (including when tests fail)
 
-A second job runs only on a push to `main`. It renders the Allure report and, if GitHub Pages is configured, deploys it.
-
-### The one Pages setting
-
-Pages is not enabled on this repository yet, and a workflow cannot turn it on.
-
-**Settings → Pages → Build and deployment → Source → GitHub Actions**
-
-Until that source is selected, the publish job still runs on `main`, sees that Pages is off, and skips the deploy. The test job stays the status check and still uploads both artifacts. After you save the setting, the next push to `main` publishes the report at:
+A second job runs only on a push to `main`. It renders the Allure report and deploys it to GitHub Pages:
 
 https://mshaim001-hue.github.io/qa-playwright-api-suite/
 
-Pull requests do not deploy.
+### The one Pages setting
+
+That deploy needs **Settings → Pages → Build and deployment → Source → GitHub Actions**. The source is already set that way, which is why the report above is live. A workflow cannot turn the setting on. If it is changed, the publish job still runs on `main`, sees that Pages is not using GitHub Actions, and skips the deploy. The test job stays the status check and still uploads both artifacts. Pull requests do not deploy.
 
 ## Coverage
 
